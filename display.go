@@ -1,5 +1,5 @@
 package chip8
 
 type display struct {
-	screen [][]byte
+	Screen [32][64]byte
 }
