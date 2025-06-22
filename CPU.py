@@ -46,10 +46,62 @@ def fetch(address:int,memory:bytearray)->tuple[int,int]:
 
 
 #decode
-def decode():
+def decode(opcode:int):
+    if opcode == 0x00E0:
+        pass
+        #cls
+    elif opcode == 0x00EE:
+        #ret
+        pass
+    elif (opcode & 0xF000) ==0x1000:
+
+        pass
+    elif (opcode & 0xF000) == 0x2000:
+        pass
+    elif (opcode & 0xF000) == 0x3000:
+        pass
+    elif (opcode & 0xF000) == 0x4000:
+        pass
+    elif (opcode & 0xF000) == 0x5000:
+        pass
+    elif (opcode & 0xF000) == 0x6000:
+        pass   
+    elif (opcode & 0xF000) == 0x7000:
+        pass
+    elif (opcode & 0xF000) == 0x8000:
+        pass
+    elif (opcode & 0xF000) == 0x9000:
+        pass
+    elif (opcode & 0xF000) == 0xA000:
+
+        pass
+    elif (opcode & 0xF000) == 0xA000:
+
+        pass
+    elif (opcode & 0xF000) == 0xB000:
+
+        pass
+    elif (opcode & 0xF000) == 0xC000:
+
+        pass
+    elif (opcode & 0xF000) == 0xD000:
+
+        pass
+    elif (opcode & 0xF000) == 0xE000:
+
+        pass
     
+    elif (opcode & 0xF000) == 0xF000:
+
+        pass
+    else:
+        print("No Opcode Find")
+
 
 #
+#
+
+
 
 
 
