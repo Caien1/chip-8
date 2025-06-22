@@ -1,42 +1,66 @@
 class CPU:
-
-    MEMORY :bytearray = bytearray(4096)
-    REG_SET :dict[str,bytearray] = {"R0" :bytearray(8),
-                                    "R1" :bytearray(8),
-                                    "R2" :bytearray(8),
-                                    "R3" :bytearray(8),
-                                    "R4" :bytearray(8),
-                                    "R5" :bytearray(8),
-                                    "R6" :bytearray(8),
-                                    "R7" :bytearray(8),
-                                    "R8" :bytearray(8),
-                                    "R9" :bytearray(8),
-                                    "RA" :bytearray(8),
-                                    "RB" :bytearray(8),
-                                    "RC" :bytearray(8),
-                                    "RD" :bytearray(8),
-                                    "RE" :bytearray(8),
-                                    "RF" :bytearray(8)
+    def __init__(self):
+    
+        self.MEMORY :bytearray = bytearray(4096)
+        self.REG_SET :dict[str,int] = {"R0" :0x00,
+                                    "R1" :0x00,
+                                    "R2" :0x00,
+                                    "R3" :0x00,
+                                    "R4" :0x00,
+                                    "R5" :0x00,
+                                    "R6" :0x00,
+                                    "R7" :0x00,
+                                    "R8" :0x00,
+                                    "R9" :0x00,
+                                    "RA" :0x00,
+                                    "RB" :0x00,
+                                    "RC" :0x00,
+                                    "RD" :0x00,
+                                    "RE" :0x00,
+                                    "RF" :0x00
                                     }
-    PC:bytearray = bytearray(16) 
-    STACK :list[bytearray] = [bytearray(16) for _ in range(16)]
-    SP:bytearray = bytearray(8)
+        self.PC:int = 0X200
+        self.STACK :list[int] = [0]*16
+        self.SP:int = 0
 
-    DELAY_TIMER :bytearray = bytearray(8)
+        self.DELAY_TIMER :int = 0
 
 
-    SOUND_TIMER :bytearray = bytearray(8)
+        self.SOUND_TIMER :int = 0
+
+cpu = CPU()
+
+
+
+
+
+#fetch
+def fetch(address:int,memory:bytearray)->tuple[int,int]:
+    opcode_first_byte = memory[address]
+    opcode_second_byte = memory[address+1]
+    address+=2
+
+    full_opcode = (opcode_first_byte<<8) | opcode_second_byte
+
+    return full_opcode, address
+
+
+#decode
+def decode():
+    
+
+#
+
+
+
+
 
 
 
     
-    pass
-
-cpu1 = CPU()
 
 
 
 
-print(cpu1.PC[0])
 
 
